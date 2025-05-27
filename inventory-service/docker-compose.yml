@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.3.0
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: inventory_service
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-pmysql" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
