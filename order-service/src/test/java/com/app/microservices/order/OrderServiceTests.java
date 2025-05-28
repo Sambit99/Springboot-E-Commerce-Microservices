@@ -33,9 +33,9 @@ public class OrderServiceTests {
     void shouldCreateOrder(){
         String requestBody = """
                 {
-                    "skuCode":"IPhone 16 Pro Max",
+                    "skuCode":"IPhone 16",
                     "price":120000,
-                    "quantity":1
+                    "quantity":10
                 }
                 """;
 
@@ -43,12 +43,12 @@ public class OrderServiceTests {
                 .contentType("application/json")
                 .body(requestBody)
                 .when()
-                .post("/api/v1/order")
+                .post("api/v1/order")
                 .then()
                 .log().all()
                 .statusCode(201)
                 .extract()
-                .body().toString();
+                .body().asString();
 
         assertEquals(responseBodyString,"Order placed successfully");
     }
