@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "OrderPlacedEvent",
+  "namespace":"com.app.microservices.notification.order.event",
+  "fields": [
+    {"name": "orderNumber", "type": "string"},
+    {"name": "email", "type": "string"}
+  ]
+}
