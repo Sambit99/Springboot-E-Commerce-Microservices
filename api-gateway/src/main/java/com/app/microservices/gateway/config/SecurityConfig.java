@@ -15,7 +15,8 @@ public class SecurityConfig {
             "/swagger-resource/**",
             "/aggregate/**",
             "/v3/api-docs/**",
-            "/api-docs/**"
+            "/api-docs/**",
+            "/actuator/prometheus"
     };
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws  Exception{
