@@ -6,6 +6,7 @@ target/
 application*.yml
 docker/
 volume-data/
+logs/
 
 ### STS ###
 .apt_generated
