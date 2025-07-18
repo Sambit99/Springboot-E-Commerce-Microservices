@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 application.*
 src/main/java/com/app/microservices/notification/order/event/*
+logs/
 
 ### STS ###
 .apt_generated
